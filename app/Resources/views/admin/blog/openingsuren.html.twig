@@ -1,0 +1,29 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_openingsuren' %}
+
+{% block main %}
+   <h1>Openingsuren wijzigen</h1>
+
+   {{ form_start(form) }}
+        {{ form_row(form.maandag) }}
+        {{ form_row(form.dinsdag) }}
+        {{ form_row(form.woensdag) }}
+        {{ form_row(form.donderdag) }}
+        {{ form_row(form.vrijdag) }}
+        {{ form_row(form.zaterdag) }}
+        {{ form_row(form.zondag) }}
+
+        <input type="submit" value="wijzig openingsuren" class="btn btn-primary" />
+        {{ form_widget(form.saveAndCreateNew, { label: 'label.save_and_create_new', attr: { class: 'btn btn-primary' } }) }}
+        <a href="{{ path('admin_post_index') }}" class="btn btn-link">
+            {{ 'action.back_to_list'|trans }}
+        </a>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block sidebar %}
+    {{ parent() }}
+
+    {{ show_source_code(_self) }}
+{% endblock %}

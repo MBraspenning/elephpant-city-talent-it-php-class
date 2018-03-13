@@ -51,4 +51,10 @@
 
     {{ parent() }}
 
+    <div class="section actions">
+        <a href="{{ path('admin_openingsuren') }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-plus" aria-hidden="true"></i> Wijzig openingsuren <!-- {{ 'action.create_post'|trans }} -->
+        </a>
+    </div>
+
 {% endblock %}

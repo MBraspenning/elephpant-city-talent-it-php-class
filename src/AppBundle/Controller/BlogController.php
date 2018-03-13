@@ -150,4 +150,5 @@ class BlogController extends Controller
             'form' => $form->createView(),
         ]);
     }
+
 }
