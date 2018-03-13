@@ -32,7 +32,7 @@ use AppBundle\Repository\OpeningsurenRepository;
 class OpeningsurenController extends Controller
 {
     /**
-    *@Route("/{id}/edit", name="admin_openingsuren")
+    *@Route("/{id}/edit", requirements={"id": "\d+"}, name="admin_openingsuren")
     *@Method({"GET", "POST"})
     */
     public function nieuweOpeningsurenAction(Openingsuren $openingsuren, Request $request) {
@@ -56,9 +56,9 @@ class OpeningsurenController extends Controller
             // as they are accessed.
             // See http://symfony.com/doc/current/book/controller.html#flash-messages
 
-            $this->addFlash('success', 'post.created_successfully');
+            $this->addFlash('success', 'Openingsuren zijn gewijzigd');
 
-            return $this->redirectToRoute('admin_openingsuren');
+            return $this->redirectToRoute('admin_openingsuren', ['id' => 1]);
         }
 
 

@@ -12,6 +12,7 @@
 namespace AppBundle\Controller\Admin;
 
 use AppBundle\Entity\Post;
+use AppBundle\Entity\Openingsuren;
 use AppBundle\Form\PostType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -56,8 +57,9 @@ class BlogController extends Controller
     {
         $entityManager = $this->getDoctrine()->getManager();
         $posts = $entityManager->getRepository(Post::class)->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
+        $openingsuren = $entityManager->getRepository(Openingsuren::class)->findOneBy(['id' => 1]);
 
-        return $this->render('admin/blog/index.html.twig', ['posts' => $posts]);
+        return $this->render('admin/blog/index.html.twig', ['posts' => $posts, 'openingsuren' => $openingsuren]); 
     }
 
     /**
