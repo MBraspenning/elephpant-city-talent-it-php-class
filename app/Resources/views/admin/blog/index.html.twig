@@ -49,6 +49,26 @@
         </a>
     </div>
 
+    <h2>Calendar</h2>
+
+    <div class="section calendar">
+        <ul class="list-group">
+            {% for calendaritem in calendaritems %}
+                <li class="list-group-item">
+                    <h4 class="list-group-item-heading">{{ calendaritem.date }}</h4>
+                    <p class="list-group-item-text">{{ calendaritem.message }}</p>
+                </li>
+            {% else %}
+                <li class="list-group-item">
+                    <h4 class="list-group-item-heading">Geen items gevonden.</h4>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ path('admin_new_calender') }}" class="btn btn-xs btn-block btn-success">
+            <i class="fa fa-plus" aria-hidden="true"></i> Nieuw item
+        </a>
+    </div>
+
     {{ parent() }}
 
 {% endblock %}
