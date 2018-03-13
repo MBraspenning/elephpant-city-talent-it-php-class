@@ -44,25 +44,25 @@ class OpeningsurenType extends AbstractType
 
         $builder
             ->add('maandag', null, [
-                'label' => 'label.maandag',
+                'label' => 'Maandag',
             ])
             ->add('dinsdag', null, [
-                'label' => 'label.dinsdag',
+                'label' => 'Dinsdag',
             ])
             ->add('woensdag', null, [
-                'label' => 'label.woensdag',
+                'label' => 'Woensdag',
             ])
             ->add('donderdag', null, [
-                'label' => 'label.donderdag',
+                'label' => 'Donderdag',
             ])
             ->add('vrijdag', null, [
-                'label' => 'label.vrijdag',
+                'label' => 'Vrijdag',
             ])
             ->add('zaterdag', null, [
-                'label' => 'label.zaterdag',
+                'label' => 'Zaterdag',
             ])
             ->add('zondag', null, [
-                'label' => 'label.zondag',
+                'label' => 'Zondag',
             ])
         ;
     }
