@@ -104,6 +104,40 @@
                                 'sharedAge': 600,
                                 '_locale': app.request.locale
                             })) }}
+
+                            <div class="block-opening-hour">
+                                <h2>Openingsuren</h2>
+                                <table class="table table-responsive table-striped">
+                                    <tr>
+                                        <th>Maandag</th>
+                                        <td>{{ openingsuren.maandag }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Dinsdag</th>
+                                        <td>{{ openingsuren.dinsdag }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Woensdag</th>
+                                        <td>{{ openingsuren.woensdag }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Donderdag</th>
+                                        <td>{{ openingsuren.donderdag }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vrijdag</th>
+                                        <td>{{ openingsuren.vrijdag }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Zaterdag</th>
+                                        <td>{{ openingsuren.zaterdag }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Zondag</th>
+                                        <td>{{ openingsuren.zondag }}</td>
+                                    </tr>
+                                </table>
+                            </div>
                         {% endblock %}
                     </div>
                 </div>

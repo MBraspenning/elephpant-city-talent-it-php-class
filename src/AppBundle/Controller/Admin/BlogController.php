@@ -13,6 +13,7 @@ namespace AppBundle\Controller\Admin;
 
 use AppBundle\Entity\Post;
 use AppBundle\Entity\Calendar;
+use AppBundle\Entity\Openingsuren;
 use AppBundle\Form\PostType;
 use AppBundle\Form\CalenderType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -59,8 +60,9 @@ class BlogController extends Controller
         $entityManager = $this->getDoctrine()->getManager();
         $posts = $entityManager->getRepository(Post::class)->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
         $calendar = $entityManager->getRepository(Calendar::class)->findAll();
+        $openingsuren = $entityManager->getRepository(Openingsuren::class)->findOneBy(['id' => 1]);
 
-        return $this->render('admin/blog/index.html.twig', ['posts' => $posts, 'calendaritems' => $calendar]);
+        return $this->render('admin/blog/index.html.twig', ['posts' => $posts, 'calendaritems' => $calendar], 'openingsuren' => $openingsuren]);
     }
 
     /**

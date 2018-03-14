@@ -13,6 +13,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Comment;
 use AppBundle\Entity\Post;
+use AppBundle\Entity\Openingsuren;
 use AppBundle\Events;
 use AppBundle\Form\CommentType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
@@ -49,11 +50,13 @@ class BlogController extends Controller
     public function indexAction($page, $_format)
     {
         $posts = $this->getDoctrine()->getRepository(Post::class)->findLatest($page);
+        $openingsuren = $this->getDoctrine()->getRepository(Openingsuren::class)->findOneBy(['id' => 1]);
+
 
         // Every template name also has two extensions that specify the format and
         // engine for that template.
         // See https://symfony.com/doc/current/templating.html#template-suffix
-        return $this->render('blog/index.'.$_format.'.twig', ['posts' => $posts]);
+        return $this->render('blog/index.'.$_format.'.twig', ['posts' => $posts, 'openingsuren' => $openingsuren]);
     }
 
     /**
@@ -150,4 +153,5 @@ class BlogController extends Controller
             'form' => $form->createView(),
         ]);
     }
+
 }
